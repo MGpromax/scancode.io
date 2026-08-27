@@ -816,6 +816,7 @@ class PipelinesIntegrationTest(TestCase):
 
     @skipIf(from_docker_image, "Random failure in the Docker context.")
     def test_scanpipe_scan_package_pipeline_integration_multiple_packages(self):
+        self.maxDiff = None
         pipeline_name = "scan_single_package"
         project1 = make_project()
 
@@ -926,6 +927,7 @@ class PipelinesIntegrationTest(TestCase):
 
     @skipIf(sys.platform == "darwin", "Not supported on macOS")
     def test_scanpipe_scan_maven_package_single_file(self):
+        self.maxDiff = None
         pipeline_name = "scan_maven_package"
         project1 = make_project()
 
